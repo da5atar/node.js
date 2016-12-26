@@ -1,7 +1,7 @@
 var spawn = require('child_process').spawn;
 
 var cp = spawn("node", ["alwaysTalking"]);
-
+// create a variable for the child process, and that will be returned by my spawn function:
 cp.stdout.on("data", function(data){
     
     console.log(`STDOUT: ${data.toString()}`);
