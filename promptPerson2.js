@@ -16,7 +16,7 @@ rl.question("What is the name of a real person? ", function(answer) {
 
 	var stream = fs.createWriteStream(realPerson.name + ".md"); // We gonna write to this file.
 
-	stream.write(`${realPerson.name}\n==================\n\n`); 
+	stream.write(`${realPerson.name}\n==================\n\n`); // file header
 
 	rl.setPrompt(`What would ${realPerson.name} say? `);
 
