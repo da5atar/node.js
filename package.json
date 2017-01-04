@@ -17,5 +17,11 @@
     "body-parser": "^1.14.1",
     "cors": "^2.7.1",
     "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "cheerio": "^0.22.0",
+    "rewire": "^2.5.2",
+    "supertest": "^2.0.1"
   }
 }
