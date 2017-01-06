@@ -1,0 +1,58 @@
+
+module.exports = function(grunt)
+{
+
+    grunt.initConfig(
+        {
+          jshint: 
+                {
+                    files: 
+                        [
+                            "*.js", "lib/*.js", "test/*.js"
+                        ],
+                    options:
+                        {
+                            esnext: true,
+                            globals: 
+                                {
+                                    jQuery: true
+                                }
+                        }
+                },
+            less:
+                {
+                //setup the details for less task: where less files are and where css should go
+                    production: 
+                        {
+                            files: 
+                                {
+                                    "public/css/style.css": ["less/*.less"]
+                                }
+                        }
+                    
+                },
+            autoprefixer: 
+                {
+                    single_file: 
+                        {
+                            src: "public/css/style.css",
+                            dest: "public/css/style.css" // replaces original file
+                        }
+                }
+        }
+                    );  
+    grunt.loadNpmTasks("grunt-contrib-jshint");
+    // add task for less:
+    grunt.loadNpmTasks("grunt-contrib-less");
+    // loads autoprefixer task
+    grunt.loadNpmTasks("grunt-autoprefixer");
+    
+    // add another task called css:
+    // grunt.registerTask("css", ["less"]); 
+    // previous css task with autoprefixer task
+    grunt.registerTask("css", ["less", "autoprefixer"]); 
+    // default task
+    // grunt.registerTask("default", ["jshint"]); 
+    // previous default task with css task
+    grunt.registerTask("default", ["jshint", "css"]);
+};

@@ -1,0 +1,33 @@
+{
+ "name": "ski-dictionary",
+  "version": "1.0.0",
+  "description": "A collection of skier terms and definitions",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "grunt",
+    "start": "node app",
+    "predev": "grunt",
+    "dev": "open http://localhost:3000 & node-dev app & grunt watch"
+  },
+  "keywords": [
+    "ski",
+    "terms",
+    "dictionary"
+  ],
+  "author": "Massamba SOW",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "jquery": "^2.1.4"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-browserify": "^5.0.0",
+    "grunt-contrib-jshint": "^1.1.0",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

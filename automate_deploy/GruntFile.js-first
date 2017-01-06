@@ -1,0 +1,34 @@
+/* Grunt will be looking for a GruntFile.js in project root folder and be expecting that this file exports a func */
+module.exports = function(grunt)
+{
+  // We add grunt config details within this func to be exported
+  // the grunt instance is passed as argument
+  /* tasks setup: the first thing is initialize the tasks with grunt.initConfig which takes an object literal as argument and each key is a task:
+    grunt.initConfig(
+        {
+            jshint: 
+            {
+                files: 
+                    [
+                        "*.js", "lib/*.js", "test/*.js"
+                    ],
+                options:
+                    {
+                        esnext: true,
+                        globals: 
+                            {
+                                jQuery: true
+                            }
+                    }
+            }
+        }
+                    );  // now that we have created a new config task, jshint...
+    // ...we make sure that Grunt has jshint plug-in loaded:
+    
+    grunt.loadNpmTasks("grunt-contrib-jshint");
+    
+    // now register a default task:
+    
+    grunt.registerTask("default", ["jshint"]); // now Grunt defaults to hint our code we we run it
+    
+};

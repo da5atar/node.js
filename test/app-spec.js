@@ -5,13 +5,13 @@ var app = rewire('../skier3');
 
 describe("Dictionary App", function () {
 
-    it("Loads the home page", function(done) {  request(app).get("/").expect(200).end(done);
-    });
+    it("Loads the home page", function(done) {  request(app).get("/").expect(200).end(done); // With SuperTest we can chain on a end() that takes in a callback to invoke when the test is finished. here mocha's done
+    }); // test stub to check if we load the home page
 
     describe("Dictionary API", function () {
 
         beforeEach(function () {
-
+            // fake data to be injected before each test:
         	this.defs = [
                 {
                     term: "One",
@@ -42,7 +42,7 @@ describe("Dictionary App", function () {
             request(app)
                .delete("/dictionary-api/One")
                .expect(200)
-               .end(done);
+               .end(done); // do not forget to add the done func to mocha's test callback
         });
 
     });
